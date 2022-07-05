@@ -1,4 +1,3 @@
-import { Params } from 'express-serve-static-core';
 import { Request, Response, NextFunction, Application } from 'express';
 import getProfile from '../getProfile';
 import app from '../../app';
@@ -9,6 +8,7 @@ describe('Get Profile middleware test', () => {
       if (key === 'profile_id') {
         return '10000';
       }
+      return '';
     };
     const req = { get, app: app as Application } as Request;
     const res = {} as Response;

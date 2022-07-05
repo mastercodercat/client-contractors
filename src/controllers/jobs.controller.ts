@@ -61,7 +61,7 @@ export const payForJob = async (req: Request, res: Response) => {
       });
     }
 
-    const transaction = await sequelize.transaction(async (t) => {
+    await sequelize.transaction(async () => {
       const updated = await Job.update(
         {
           paid: true,
@@ -73,7 +73,7 @@ export const payForJob = async (req: Request, res: Response) => {
           },
         }
       );
-      const client = await Profile.update(
+      await Profile.update(
         {
           balance: profile.balance - job.price,
         },
@@ -83,7 +83,7 @@ export const payForJob = async (req: Request, res: Response) => {
           },
         }
       );
-      const contractor = await Profile.update(
+      await Profile.update(
         {
           balance: profile.balance + job.price,
         },

@@ -31,7 +31,7 @@ export const deposit = async (req: Request, res: Response) => {
       });
     }
 
-    await sequelize.transaction(async (t) => {
+    await sequelize.transaction(async () => {
       const updated = await Profile.update(
         {
           balance: client.balance + balance,
