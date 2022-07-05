@@ -1,15 +1,9 @@
 import express from 'express';
 
-import {
-  getContract,
-  getContractList,
-} from '../controllers/contracts.controller';
+import { getContract, getContractList } from '../controllers/contracts.controller';
 import { getUnpaidJobs, payForJob } from '../controllers/jobs.controller';
 import { deposit } from '../controllers/client.controller';
-import {
-  getBestClients,
-  getBestProfession,
-} from '../controllers/admin.controller';
+import { getBestClients, getBestProfession } from '../controllers/admin.controller';
 
 import { depositeRules } from '../utils/rules';
 import { validate } from '../middleware/validation';

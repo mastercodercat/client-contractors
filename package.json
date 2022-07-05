@@ -11,7 +11,8 @@
   "scripts": {
     "start": "nodemon ./src/server.ts",
     "seed": "ts-node ./scripts/seedDb.ts",
-    "test": "jest"
+    "test": "jest",
+    "prettify": "prettier --config .prettierrc.json --write src/**/*.ts"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
@@ -29,6 +30,7 @@
     "express-validator": "^6.14.2",
     "jest": "^28.1.2",
     "nodemon": "^1.19.4",
+    "prettier": "^2.7.1",
     "sqlite3": "^5.0.8",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.2",

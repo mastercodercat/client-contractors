@@ -18,10 +18,7 @@ export const getContract = async (req: Request, res: Response) => {
       return res.status(404).end();
     }
     const profile = req.profile as typeof Profile;
-    if (
-      contract.ClientId !== profile?.id &&
-      contract.ContractorId !== profile?.id
-    ) {
+    if (contract.ClientId !== profile?.id && contract.ContractorId !== profile?.id) {
       return res.status(403).json({
         message: 'This contract does not belong to the client.',
       });

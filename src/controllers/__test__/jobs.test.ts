@@ -35,9 +35,7 @@ describe('Test Job endpoints', () => {
     res.json = jest.fn().mockReturnValue(res);
     await payForJob(req, res);
     expect((res.status as any).mock.calls[0][0]).toBe(403);
-    expect((res.json as any).mock.calls[0][0].message).toBe(
-      'This job does not belong to the profile'
-    );
+    expect((res.json as any).mock.calls[0][0].message).toBe('This job does not belong to the profile');
   });
 
   test('failed to pay if it was already paid(400 error)', async () => {
@@ -50,8 +48,6 @@ describe('Test Job endpoints', () => {
     res.json = jest.fn().mockReturnValue(res);
     await payForJob(req, res);
     expect((res.status as any).mock.calls[0][0]).toBe(400);
-    expect((res.json as any).mock.calls[0][0].message).toBe(
-      'This job was already paid'
-    );
+    expect((res.json as any).mock.calls[0][0].message).toBe('This job was already paid');
   });
 });
