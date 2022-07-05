@@ -8,6 +8,7 @@
     "sequelize": "^6.3.4",
     "typescript": "^4.7.4"
   },
+  "author": "Shane Lewis",
   "scripts": {
     "start": "nodemon ./src/server.ts",
     "seed": "ts-node ./scripts/seedDb.ts",
